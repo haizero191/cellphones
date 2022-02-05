@@ -1,0 +1,68 @@
+.Ad_ItemProduct {   
+    background-color: #f8f8f8;
+    cursor: zoom-in;
+    margin-bottom: 3px;
+    
+}
+
+.Ad_ItemProduct ul {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr 1fr 2fr;
+    min-height: 60px;
+    height: 40px;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.Ad_ItemProduct ul li {
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    padding-right: 14px;
+    font-size: 13px;
+
+}
+
+.Ad_ItemProduct ul li button {
+    display: flex;
+    padding: 4px 8px;
+    margin-right: 8px;
+    cursor: pointer;
+    align-items: center;
+}
+
+.Ad_ItemProduct ul li button img {
+    height: 16px;
+    margin-left: 16px;
+}
+
+.Ad_ItemProduct ul li .group-btn {
+    display: flex;
+}
+
+.remove-btn {
+    color: red;
+    border: 2px solid red;
+    font-weight: bold;
+}
+
+.edit-btn {
+    color: green;
+    border: 2px solid green;
+    font-weight: bold;
+}
+
+.Ad_ItemProduct ul .image-product {
+    width: 90px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+
+.Ad_ItemProduct ul .image-product img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+}
+

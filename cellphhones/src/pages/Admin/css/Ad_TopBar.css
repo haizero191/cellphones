@@ -1,0 +1,146 @@
+@import "./Animation_RingBell.css";
+
+.Ad_TopBar {
+    width: 100%;
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    min-width: 1024px;
+}
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+
+.Ad_TopBar .container {
+    padding: 0px 8px;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Ad_TopBar .left-content {
+    height: 100%;
+    display: flex;
+}
+
+.Ad_TopBar .left-content .logo {
+    height: 100%;
+    margin-right: 10px;
+}
+
+.Ad_TopBar .left-content .logo img {
+    width: 160px;
+    object-fit: cover;
+    height: 100%;
+}
+
+.Ad_TopBar .left-content .current-select {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+    transform: translateY(0px);
+}
+.Ad_TopBar .left-content .current-select p{
+    margin-right: 4px;
+}
+.Ad_TopBar .left-content .current-select p:nth-child(1) {   
+    font-size: 20px;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0.5;
+}
+.Ad_TopBar .left-content .current-select p:nth-child(2) {
+    font-size: 12px;
+    display: flex;
+    align-items: flex-end;
+    opacity: 0.5;
+}
+
+.Ad_TopBar .left-content .current-select p:nth-child(3) {
+    transform: translateY(-3px);
+}
+
+.Ad_TopBar .right-content {
+    display: flex;
+    align-items: center;
+} 
+.Ad_TopBar .right-content .account {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 40px;
+}
+.Ad_TopBar .right-content .account .avatar {
+    width: 40px;
+    height: 40px;
+    background-color: salmon;
+    margin-left: 14px;
+    border-radius: 50%;
+}
+
+.Ad_TopBar .right-content .account .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.Ad_TopBar .right-content .account .info .name {
+    font-size: 16px;
+}
+.Ad_TopBar .right-content .account .info .role {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    opacity: 0.6;
+    color: orange;
+}
+
+.Ad_TopBar .notification {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+}
+
+.Ad_TopBar .notification .number-ring{
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    position: absolute;
+    top: 2px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 50%;
+    right: 0px;
+    z-index: 2;
+}
+
+.Ad_TopBar .notification img {
+    width: 22px;
+    -webkit-animation: ring 4s .7s ease-in-out infinite;
+  -webkit-transform-origin: 50% 4px;
+  -moz-animation: ring 4s .7s ease-in-out infinite;
+  -moz-transform-origin: 50% 4px;
+  animation: ring 4s .7s ease-in-out infinite;
+  transform-origin: 50% 4px;
+}
+

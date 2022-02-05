@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  display: flex;
+  z-index: 5;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  background-color: #D70018;
+  width: 100%;
+}
+.nav-item {
+  font-size: 14px;
+}
+
+.locationList {
+  display: none;
+}
+
+.menuIcon {
+  font-size:24px;
+  color: #fff
+}
+
+.search {
+  height:34px;
+  width: 274px;
+  border-radius: 15px;
+  border: none;
+}
+
+.nav-item {
+  margin: 0 10px;
+  color: #fff;
+}

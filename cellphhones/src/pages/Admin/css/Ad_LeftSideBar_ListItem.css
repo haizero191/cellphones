@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.Ad_LeftSideBar_ListItem {
+    margin-bottom: 14px;
+}
+.Ad_LeftSideBar_ListItem .container:hover {
+   
+}
+
+
+.Ad_LeftSideBar_ListItem .container:hover .left-content{
+    margin-left: 10px;
+    transition: 0.3s;
+}
+.Ad_LeftSideBar_ListItem .container{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.Ad_LeftSideBar_ListItem .left-content{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transform: translateY(-4px);
+
+}
+
+.Ad_LeftSideBar_ListItem .left-content .icon {
+    height: 100%;
+    display: flex;
+    margin-right: 10px;
+    align-items: flex-end;
+    transform: translateY(1px);
+    opacity: 0.6;
+
+}
+
+.Ad_LeftSideBar_ListItem .left-content .text{
+    height: 100%!important;
+
+    
+  
+}
+.Ad_LeftSideBar_ListItem .left-content .text p{
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.Ad_LeftSideBar_ListItem .left-content .icon img {
+    width: 26px;
+    height: 26px;
+}
+
+
+.Ad_LeftSideBar_ListItem .right-content .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.Ad_LeftSideBar_ListItem .right-content .icon img{
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+   
+}
+
+.Ad_LeftSideBar_ListItem .menu-detail {
+    padding: 0px 10px;
+    overflow-y: hidden;
+    height: 0px;
+    transition: 0.5s;
+}
+
+
+.dropdown {
+    height: inherit!important;
+    transition: 0.5s;
+  
+}
+
+.Ad_LeftSideBar_ListItem .menu-detail ul li{
+    margin-bottom: 8px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    padding-left: 4px;
+    cursor: pointer;
+}
+.Ad_LeftSideBar_ListItem .menu-detail ul li:hover {
+    background-color: #eee;
+    color: orange;
+}
+
+
+
+.rotate {
+    transform: rotateX(180deg);
+}

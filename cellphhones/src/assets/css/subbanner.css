@@ -1,0 +1,8 @@
+.sub-banner-section {
+    height: 115px;
+    margin-bottom: 15px;
+    width: 265px;
+    border-radius: 1rem;
+    box-shadow: rgb(60 64 67 / 10%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+    cursor: pointer;
+}

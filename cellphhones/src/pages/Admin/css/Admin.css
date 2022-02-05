@@ -1,0 +1,15 @@
+.Admin {
+
+}
+
+.main {
+    display: flex;
+    overflow-x: hidden;
+}
+
+.main .main-container{
+    width: calc(100% - 220px);
+    padding-top: 80px;
+    padding: 70px 10px 10px 10px;
+    background-color: white;
+}
