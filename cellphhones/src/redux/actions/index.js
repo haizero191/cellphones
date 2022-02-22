@@ -1,7 +1,8 @@
 import {
     loadProducts,
     removeProduct, 
-    createProduct
+    createProduct,
+    loadDetailProduct
 } from "./productActions";
 
 import {
@@ -18,6 +19,7 @@ const combineAction = {
     loadProducts, 
     removeProduct, 
     createProduct, 
+    loadDetailProduct,
     loadCate, 
     createCate, 
     loadBrand, 

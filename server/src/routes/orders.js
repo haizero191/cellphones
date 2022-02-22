@@ -13,4 +13,8 @@ router.post('/create', OrderController.create)
 router.post('/remove', OrderController.remove)
 
 
+//[POST]  api/orders/changeStatusOrder
+router.post('/changestatusorder', OrderController.changeStatusOrder);
+
+
 module.exports = router;

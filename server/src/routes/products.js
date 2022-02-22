@@ -21,5 +21,8 @@ router.get("/search", ProductController.filter);
 //[GET] api/products/brand
 router.get("/brands", ProductController.getBrandsWithCate);
 
+//[GET] api/products/show
+router.get("/show", ProductController.show);
+
 
 module.exports = router;

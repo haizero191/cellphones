@@ -3,7 +3,6 @@ const store = require("../middleware/multer");
 const Image = require("../models/Image.model");
 const fs = require('fs')
 const mongoose = require("mongoose");
-const path = require("path")
 const CateModel = require("../models/Cate.model");
 const ProductModel = require("../models/Product.model");
 
@@ -55,6 +54,7 @@ class ProductController {
     async add(req, res, next) {
         // upload image file with {image: file}
         const files = req.files;
+        console.log(files);
         var checkIncludeName = await Product.findOne({name: req.body.name})
         if(files.length === 0) {
             res.send({success: false, message: "please choose image file"})
@@ -149,6 +149,8 @@ class ProductController {
         
     }
 
+
+    //[POST] api/products/remove?id={...}
     async remove(req, res, next) {
         let id = req.query.id;
         console.log(id)
@@ -176,12 +178,14 @@ class ProductController {
         }
     }
 
+
+    //[POST] api/products/edit?id={...}
     async edit(req, res, next) {
         const id = req.query.id;
         const files = req.files;
         const options = {new: true}
-
-        if(files.length == 0)   // không có file ảnh được gửi  lên 
+        console.log(req.body);
+        if(files.length === 0 )   // không có file ảnh được gửi  lên 
         {
             console.log("--> Update don't have image file success...!")
             let productUpdate = req.body                                       // update request body 
@@ -237,47 +241,45 @@ class ProductController {
         }    
     }
 
+    //[GET] api/products/show?id={...}
+    async show(req, res, next) {
+        var id = req.query.id;
+        var product = await ProductModel.findById(id);
+        res.json({success: true, response: product})
 
+    }
+
+
+    //[GET] api/products/search?name={...}&brand={...}&cate={...}&page={...}&perpage={...}
     async filter(req,res,next) {
         let name = req.query.name;
-        console.log(name)
         let brand = req.query.brand;
-        let cate = req.query.brand;
+        let cate = req.query.cate;
         let page = req.query.page; 
+        let perpage = req.query.perpage;
         if(!page) {
             page = 1;
         }
-
+        if(!brand)
+            brand = "";
+        if(!cate)
+            cate = '';
         page = parseInt(page);
-        console.log(page)
         if(page < 1)
             page = 1    
-        var skipAmount = (page-1) * 8;
+        var skipAmount = (page-1) * perpage;
         try {
-            var response = await ProductModel.find({name: {$regex: name, $options: '$i'}})
+            var response = await ProductModel.find({name: {$regex: name, $options: '$i'},brand: {$regex: brand, $options: '$i'}, category: {$regex: cate, $options: '$i'}})
             .skip(skipAmount)
             .limit(8)
-
             res.json({success: true, response})
         }catch(error) {
-            res.json({success: false, message:"Some thing wasn't wrong...!"})
+            res.json({success: false, message:"Some thing was wrong...!"})
         }
-        
-
-        // try {
-        //     var response = await ProductModel.find({name: {$regex: name, $options: '$i'}})
-        //     .skip(0)
-        //     .limit(8)
-    
-        //     res.json({response})
-        // }catch(error) {
-        //     res.json({success: false, message:"Some thing wasn't wrong...!"})
-        // }
-        
     }
 
     
-
+    // [GET] api/products/searchWithCategory?category={...}
     async searchWithCategory(req,res,next) {
         let category = req.query.category;
         if(!category) {
@@ -289,6 +291,7 @@ class ProductController {
         }
     }
 
+    // [GET] api/products/getBrandsWithCate?category={...}
     async getBrandsWithCate(req,res,next) {
         let category = req.query.category;
         if(!category) {
@@ -306,4 +309,6 @@ class ProductController {
     }
 }
 
+
+// export ->>
 module.exports = new ProductController;

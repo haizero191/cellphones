@@ -1,21 +1,21 @@
 import {
     ACTION_LOAD_PRODUCT_REQUEST, 
     ACTION_LOAD_PRODUCT_SUCCESS, 
-    ACTION_REMOVE_PRODUCT
+    ACTION_REMOVE_PRODUCT,
+    ACTION_LOAD_PRODUCT_DETAIL_SUCCESS
 } from "../contants/productConstants"
 import ProductAPI from "../../api/productAPI";
 
-export const loadProducts = (perpage, page) => {
+export const loadProducts = (productData, page) => {
     return async(dispatch) => {
         try {  
             dispatch({
                 type: ACTION_LOAD_PRODUCT_REQUEST 
             })
-            var response = await ProductAPI.getProducts(perpage, page);
-            console.log(response)
+            var response = await ProductAPI.searchProducts(productData, page);
             dispatch({
                 type: ACTION_LOAD_PRODUCT_SUCCESS,
-                payload: response.data
+                payload: response
             })
         }
         catch(err) {
@@ -26,7 +26,7 @@ export const loadProducts = (perpage, page) => {
 
 
 
-export const loadDetailProducts = (id) => {
+export const loadDetailProduct = (id) => {
     return async(dispatch) => {
         try {  
             dispatch({
@@ -34,7 +34,7 @@ export const loadDetailProducts = (id) => {
             })
             var response = await ProductAPI.getDetailProduct(id);
             dispatch({
-                type: ACTION_LOAD_PRODUCT_SUCCESS,
+                type: ACTION_LOAD_PRODUCT_DETAIL_SUCCESS,
                 payload: response.data
             })
         }

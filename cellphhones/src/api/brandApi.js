@@ -6,7 +6,6 @@ class BrandAPI {
     async getAllBrand() {
         try {
             let response = await axios.get(process.env.REACT_APP_API_ENDPOINT + `/brands/`)
-            console.log(response)
             return response.data;
         }
         catch(error) {

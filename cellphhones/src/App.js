@@ -7,6 +7,8 @@ import Location from './pages/Location'
 import Checkout from './pages/Checkout'
 import Cart from './pages/Cart'
 import Admin from './pages/Admin/Admin.js'
+
+
 function App() {
   const url = window.location.pathname
   return (

@@ -1,112 +1,5 @@
-ul {
-    list-style: none;
-}
 
-
-.Ad_PDManage {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    margin-bottom: 40px;
-}
-
-.Ad_PDManage .container {
-    width: 100%;
-    height: 100%;
-    min-width: 1024px;
-}
-
-.Ad_PDManage .actions-menu {
-    width: 100%;
-    height: 60px;
-}
-
-
-.Ad_PDManage .table-products .header-tb ul{
-    background-color: #480505;
-    color: white;
-    font-weight: bold;
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr 1fr 1fr 2fr;
-    min-height: 50px;
-    align-items: center;
-    padding: 0 8px;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-.Ad_PDManage .table-products .main-tb {
-    overflow-y: auto;
-    max-height: 660px;
-}
-
-
-
-.Ad_PDManage .actions-menu .actions-container{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-.Ad_PDManage  .create-btn {
-    padding: 8px 14px;
-    border-radius: 4px;
-    background-color: #4BB543;
-    font-weight: bold;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.create {
-    min-width: 100px;
-    margin-right: 10px;
-}
-
-.Ad_PDManage .filters {
-    display: flex;
-    margin-right: 55px;
-}
-
-.Ad_PDManage .search-product {
-    position: relative;
-    height: 40px;
-}
-
-.Ad_PDManage .search-product a{
-    width: 24px;
-    top: 20%;
-    height: 24px;
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
-
-}
-.Ad_PDManage .search-product a img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.6;
-}
-
-.Ad_PDManage .filters .search-product input{
-    height: 30px;
-    outline: none;
-    padding: 0 10px;
-    width: 250px;
-    height: 100%;
-}
-
-.Ad_PDManage .filters select {
-    margin-left: 10px;
-    padding: 0px 10px;
-}
-
-
-
-.CreateNewFrom {
+.FormCreate {
     background-color: rgba(00, 00, 00, 0.8);
     position: fixed;
     top: 0;
@@ -119,7 +12,7 @@ ul {
     justify-content: center;
 }
 
-.CreateNewFrom .container{
+.FormCreate .container{
     width: 900px;
     height:600px; 
     margin: 0 auto;
@@ -129,7 +22,7 @@ ul {
 
 }
 
-.CreateNewFrom .container .title {
+.FormCreate .container .title {
     width: 100%;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -139,13 +32,8 @@ ul {
     word-spacing: 10px;
 }
 
-.CreateNewFrom .form-create form .input-styled input, .input-styled textarea{
-    width: 100%!important;
-    height: 40px;
-    padding: 0px 10px;
-}
 
-.CreateNewFrom .container .category-input {
+.FormCreate .container .category-input {
     display: flex;
 }
 
@@ -212,24 +100,49 @@ ul {
 }
 
 
-.CreateNewFrom .form-create form .input-group {
+.FormCreate .form-create form .input-group {
     width: 100%;
     margin-bottom: 20px;
-}
-
-.CreateNewFrom .form-create form .input-group .row {
     display: flex;
-    margin-left: -10px;
-    margin-right: -10px;
+
 }
 
-.CreateNewFrom .form-create form .input-group input {
-    margin:0 10px;
+.FormCreate .form-create form .input-group .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-left: -12px;
+    margin-right: -12px;
+
+    flex-grow: 1;
+
+}
+
+
+.FormCreate .form-create form .input-group .row  div {
+    width: auto;
+    flex: 15%;
     margin-bottom: 20px;
 }
+
+.FormCreate .form-create form .input-group .row  div input {
+    width: 100%;
+}
+
 .description textarea{
     height: 100px;
     padding: 8px;
+}
+
+.input-styled input{
+    width: 100%;
+}
+
+
+.FormCreate .form-create form .input-styled input, .input-styled textarea{
+
+    height: 40px;
+    padding: 0px 10px;
 }
 
 
@@ -292,7 +205,7 @@ ul {
     }
 }
 
-.Ad_PDManage .form-create .image {
+.form-create .image {
     margin-bottom: 20px;
 }
 .btn-submit {
@@ -315,7 +228,7 @@ ul {
     transition: 0.4s;
 }
 
-.CreateNewFrom .toast-create{
+.FormCreate .toast-create{
     width: 0px;
     height: 100%;
     background-color: white;

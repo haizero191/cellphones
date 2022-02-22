@@ -1,0 +1,30 @@
+.FullPageLoader {
+    position: fixed;
+    width: 100vw;
+    z-index: 200;
+    height: 100vh;
+    top: 0;
+    left: 0%;
+   
+}
+.loader-container {
+    height: 100%;
+
+}
+
+
+
+.loader-container .loader{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    z-index: 104;
+ 
+}
+
+.loader-container .loader img {
+    width: 60px;
+    height: 60px;
+    
+}

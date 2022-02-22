@@ -102,6 +102,9 @@ a {
     transition: 0.5s;
   
 }
+.Ad_LeftSideBar_ListItem .menu-detail ul {
+    padding: 0;
+}
 
 .Ad_LeftSideBar_ListItem .menu-detail ul li{
     margin-bottom: 8px;
